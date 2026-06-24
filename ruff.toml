@@ -1,0 +1,25 @@
+target-version = "py311"
+line-length = 100
+src = ["src", "tests", "examples"]
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501",  # line length handled by formatter
+    "B008",  # function calls in argument defaults (typer pattern)
+]
+
+[lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[lint.isort]
+known-first-party = ["scrapehub"]

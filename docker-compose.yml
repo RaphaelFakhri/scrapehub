@@ -1,0 +1,26 @@
+services:
+  scrapehub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: scrapehub:latest
+    env_file:
+      - .env
+    environment:
+      # Route through the bundled proxy mock when you want an end-to-end demo.
+      # Override or remove to scrape directly.
+      SCRAPEHUB_LOG_FORMAT: json
+      SCRAPEHUB_OUTPUT_DIR: /data
+    volumes:
+      - ./data:/data
+    # Example: scrape Hacker News top stories and write CSV+JSON to ./data
+    command: ["run", "hackernews", "--limit", "10", "--out", "/data/hackernews"]
+
+  # Optional local forward-proxy mock for end-to-end proxy-rotation demos.
+  # Bring it up with `docker compose --profile proxy up`.
+  proxy-mock:
+    profiles: ["proxy"]
+    image: ghcr.io/mitmproxy/mitmproxy:11.0.0
+    command: ["mitmdump", "--listen-host", "0.0.0.0", "--listen-port", "8080"]
+    ports:
+      - "8080:8080"

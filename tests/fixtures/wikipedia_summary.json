@@ -1,0 +1,16 @@
+{
+  "type": "standard",
+  "title": "Web scraping",
+  "displaytitle": "Web scraping",
+  "description": "Data scraping used for extracting data from websites",
+  "extract": "Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites.",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Web_scraping"
+    },
+    "mobile": {
+      "page": "https://en.m.wikipedia.org/wiki/Web_scraping"
+    }
+  },
+  "lang": "en"
+}

@@ -1,0 +1,16 @@
+{
+  "has_next": true,
+  "page": 1,
+  "quotes": [
+    {
+      "author": { "name": "Albert Einstein", "slug": "Albert-Einstein" },
+      "tags": ["change", "deep-thoughts", "thinking", "world"],
+      "text": "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking."
+    },
+    {
+      "author": { "name": "J.K. Rowling", "slug": "J-K-Rowling" },
+      "tags": ["abilities", "choices"],
+      "text": "It is our choices, Harry, that show what we truly are, far more than our abilities."
+    }
+  ]
+}
